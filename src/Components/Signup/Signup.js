@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Signup = (props) => {
 
-    const host = "http://localhost:5000"
+    const host = "https://jsinotebook.herokuapp.com"
     const [credentials, setCredentials] = useState({
         name: "",
         email: "",
