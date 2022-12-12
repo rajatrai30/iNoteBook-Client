@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 
 const NoteState = (props) => {
-    const host = "https://jsinotebook.herokuapp.com/"
+    const host = "https://inotebook-wine.vercel.app"
     const notesInitial = []
 
     const [notes, setNotes] = useState(notesInitial)

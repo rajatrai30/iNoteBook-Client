@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
-    const host = "https://jsinotebook.herokuapp.com"
+    const host = "https://inotebook-wine.vercel.app"
     const [credentials, setCredentials] = useState({
         email: "",
         password: ""
