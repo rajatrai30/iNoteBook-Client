@@ -44,7 +44,7 @@ const Signup = (props) => {
     }
 
     return (
-        <div className='container mt-3'>
+        <div className="container my-4" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
             <h1>SignUp to get started with iNoteBook</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">

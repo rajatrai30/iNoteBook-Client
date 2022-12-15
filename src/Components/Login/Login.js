@@ -40,17 +40,17 @@ const Login = (props) => {
 
 
     return (
-        <div className='container mt-3'>
-        <h1>Login to Continue to iNoteBook</h1>
+        <div className="container my-4" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
+        <h1 style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>Login to Continue to iNoteBook</h1>
             <form onSubmit={handleSubmit}>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" id="email" name='email' value={credentials.email} on onChange={onChange} />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                    <input type="email" className="form-control" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} id="email" name='email' value={credentials.email} on onChange={onChange} />
+                    <div id="emailHelp" className="form-text" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>We'll never share your email with anyone else.</div>
                 </div>
                 <div className="mb-3">
                     <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="password" value={credentials.password} on onChange={onChange} name='password' />
+                    <input type="password" className="form-control" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} id="password" value={credentials.password} on onChange={onChange} name='password' />
                 </div>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </form>

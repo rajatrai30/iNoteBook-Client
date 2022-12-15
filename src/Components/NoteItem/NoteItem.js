@@ -5,11 +5,11 @@ import contextValue from '../../Context/notes/NoteContext';
 const NoteItem = (props) => {
     const context = useContext(contextValue);
     const { deleteNote } = context;
-    const { notes, updateNote } = props;
+    const { notes, updateNote, mode } = props;
 
     return (
         <div className='col-md-3'>
-            <div className="card my-3">
+            <div className="card my-3" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 <div className="card-body">
                     <div className="d-flex align-items-center">
                         <h5 className="card-title">{notes.title}</h5>

@@ -3,10 +3,10 @@ import Notes from '../Notes/Notes';
 
 
 const Home = (props) => {
-  const {showAlert} = props
+  const {showAlert, mode} = props
   return (
     <div>
-      <Notes showAlert={showAlert}/>
+      <Notes showAlert={showAlert} mode={mode} />
     </div>
   )
 }

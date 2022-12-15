@@ -45,7 +45,7 @@ const Notes = (props) => {
 
     return (
         <>
-            <AddNote showAlert={props.showAlert}/>
+            <AddNote showAlert={props.showAlert} mode={props.mode}/>
             <button type="button" className="btn btn-primary d-none" data-bs-toggle="modal" ref={ref} data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
@@ -60,17 +60,17 @@ const Notes = (props) => {
                             <form className='container my-3'>
                                 <div className="mb-3">
                                     <label htmlFor="etitle" className="form-label">Title</label>
-                                    <input type="text" className="form-control" id="etitle" name='etitle' value={note.etitle} onChange={onChange} minLength={5} required/>
+                                    <input type="text" className="form-control" id="etitle" name='etitle' style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} value={note.etitle} onChange={onChange} minLength={5} required/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="edescription" className="form-label">Description</label>
-                                    <input type="text" id="edescription" name="edescription" value={note.edescription} className="form-control" onChange={onChange} minLength={5} required/>
+                                    <input type="text" id="edescription" name="edescription" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} value={note.edescription} className="form-control" onChange={onChange} minLength={5} required/>
                                 </div>
                                 <div className="mb-3">
                                     <label htmlFor="etag" className="form-label">Tag</label>
-                                    <input type="text" id="etag" name="etag" className="form-control" value={note.etag} onChange={onChange} minLength={5} required/>
+                                    <input type="text" id="etag" name="etag" style={{ backgroundColor: props.mode === 'dark' ? 'rgb(20, 81, 131)' : 'white', color: props.mode === 'dark' ? 'white' : '#042743' }} className="form-control" value={note.etag} onChange={onChange} minLength={5} required/>
                                 </div>
-                                <button type="submit" className="btn btn-primary" onClick={handleAddClick}>Add Note</button>
+                                {/* <button type="submit" className="btn btn-primary" onClick={handleAddClick}>Add Note</button> */}
                             </form>
                         </div>
                         <div className="modal-footer">
@@ -80,13 +80,13 @@ const Notes = (props) => {
                     </div>
                 </div>
             </div>
-            <div className='row my-3'>
+            <div className="row my-3" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
                 <h1>Your Notes</h1>
                 <div className='container mx-2'>
                     {notes.length === 0 && 'No Notes to Display'}
                 </div>
                 {notes.map((notes) => {
-                    return <NoteItem key={notes._id} updateNote={updateNote} notes={notes} showAlert={props.showAlert}/>
+                    return <NoteItem key={notes._id} updateNote={updateNote} notes={notes} showAlert={props.showAlert} mode={props.mode}/>
                 })}
             </div>
         </>
